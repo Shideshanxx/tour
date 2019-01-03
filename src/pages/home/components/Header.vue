@@ -19,7 +19,7 @@ export default {
 }
 </script>
 <!--lang="stylus" 引用css预处理框架stylus；
-    加scoped关键字，防止style里的样式污染其它组件里的样式规定
+    加scoped关键字，表示聚焦当前组件，防止style里的样式污染其它组件里的样式规定
     1rem = html font-size = 50px;下列样式是stylus书写语法;
     定义并引用stylus公共样式：1在styles创建公共样式，2用@import方法引入公共样式
     在路径中@表示根目录，但在样式中根路径为  ~@
