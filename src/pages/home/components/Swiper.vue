@@ -1,8 +1,10 @@
 <template>
     <div class="wrapper">
-        <swiper :options="swiperOption">
+        <!-- 只有当数据传输到list中才会加载轮播，显示第一张图；否则不加v-if会默认先显示最后一张图;
+            但是最好不要在模板中写逻辑，所以在computed里书写逻辑 -->
+        <swiper :options="swiperOption" v-if="showSwiper">
         <!-- slides -->
-        <swiper-slide v-for="item of swiperList" :key="item.id">
+        <swiper-slide v-for="item of list" :key="item.id">
             <img class="swiper-img" :src="item.imgUrl">
         </swiper-slide>
         <!-- Optional controls -->
@@ -14,19 +16,20 @@
 //ES6中简化data: function(){...} 成下面形式
 export default {
     name: 'HomeSwiper',
+    props: {
+        list: Array
+    },
     data () {
         return {
             swiperOption: {
                 pagination: '.swiper-pagination',
                 loop: true
-            },
-            swiperList: [{
-                id: '0001',
-                imgUrl: 'https://dimg04.c-ctrip.com/images/70080z000000mxqcqA1DE_1920_340_17.jpg'
-            },{
-                id: '0002',
-                imgUrl: 'https://dimg04.c-ctrip.com/images/700s0z000000n2p714343_1920_340_17.jpg'
-            }]
+            }
+        }
+    },
+    computed: {
+        showSwiper () {
+            return this.list.length
         }
     }
 }
