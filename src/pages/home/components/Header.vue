@@ -9,7 +9,8 @@
         </div>
         <router-link to="/city">
             <div class="header-right">
-                {{this.city}}
+                <!--$store即vuex创建的store，因为main.js中引入了store所以所有组件都可以用$store-->
+                {{this.$store.state.city}}
                 <span class="iconfont arrow-icon">&#xe64a;</span>
             </div>
         </router-link>
@@ -18,10 +19,7 @@
 
 <script>
 export default {
-    name: 'HomeHeader',
-    props: {
-        city: String
-    }
+    name: 'HomeHeader'
 }
 </script>
 <!--lang="stylus" 引用css预处理框架stylus；

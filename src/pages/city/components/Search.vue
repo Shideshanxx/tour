@@ -12,6 +12,7 @@
                 <li class="search-item border-bottom" 
                 v-for="item of list" 
                 :key="item.id"
+                @click="handleCityClick(item.name)"
                 >
                     {{item.name}}
                 </li>
@@ -64,6 +65,13 @@ export default {
                 }
                 this.list = result
             },100)
+        }
+    },
+    methods: {
+        handleCityClick (city) {
+            this.$store.commit('changeCity',city)
+            //每个组件都可使用$router， 编程式导航$router.push(...)等价于<router-link :to="...">
+            this.$router.push('/')
         }
     },
     mounted () {
