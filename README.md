@@ -1,7 +1,7 @@
 # 项目简介
 
 > A Vue.js project
-
+ 
 项目预览需要浏览器支持file协议下的AJAX请求，Firefox浏览器默认支持，Chrome解决方案如下：
     Windows：
         设置Chrome的快捷方式属性，在“目标”后面加上--allow-file-access-from-files，注意前面有个空格，重新打开Chrome即可。
