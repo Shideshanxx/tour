@@ -23,9 +23,9 @@
                 </div>
             </div>
             <div class="area" 
-            v-for="(item,key) of cities" 
-            :key="key"
-            :ref="key"
+                v-for="(item,key) of cities" 
+                :key="key"
+                :ref="key"
             >
                 <div class="title border-topbottom">{{key}}</div>
                 <div class="item-list">
