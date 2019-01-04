@@ -3,6 +3,8 @@ import App from './App'
 import router from './router'
 import fastClick from 'fastClick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+//有些浏览器不支持promise 引用下面的这个插件，自动添加ES6属性
+import 'babel-polyfill'
 import store from './store'
 import 'styles/reset.css'
 import 'styles/border.css'

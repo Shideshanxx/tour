@@ -1,13 +1,15 @@
 <template>
+    <!--@touchstart.prevent阻止在拖动字母时页面整体跟着动-->
     <ul class="list">
-        <li class="item" 
-        v-for="item of letters" 
-        :key="item"
-        :ref="item"
-        @touchstart="handleTouchStart"
-        @touchmove="handleTouchMove"
-        @touchend="handleTouchEnd"
-        @click="handleLetterClick"
+        <li 
+            class="item" 
+            v-for="item of letters" 
+            :key="item"
+            :ref="item"
+            @touchstart.prevent="handleTouchStart"
+            @touchmove="handleTouchMove"
+            @touchend="handleTouchEnd"
+            @click="handleLetterClick"
         >
             {{item}}
         </li>

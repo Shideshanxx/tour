@@ -18,7 +18,7 @@ import axios from 'axios'
 export default {
     name: 'Home',
     components: {
-        HomeHeader: HomeHeader,   //或简化成HomeHeader
+        HomeHeader,   //HomeHeader: HomeHeader的简化
         HomeSwiper,
         HomeIcons,
         HomeRecommend,
