@@ -1,5 +1,5 @@
 # 项目简介
-
+  
 > A Vue.js project
  
 项目预览需要浏览器支持file协议下的AJAX请求，Firefox浏览器默认支持，Chrome解决方案如下：
