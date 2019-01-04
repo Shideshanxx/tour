@@ -10,7 +10,7 @@
                 {{item.title}}
             </div>
             <div v-if="item.children" class="item-children">
-                <!--给自身一个name值多时候是为了递归自身-->
+                <!--给自身一个name值很多时候是为了递归自身-->
                 <detail-list :list="item.children"></detail-list>
             </div>
         </div>

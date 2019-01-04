@@ -20,5 +20,9 @@ export default new Router({
       path: '/detail/:id',
       name: 'Detail',
       component: Detail
-    }]
+    }],
+    //每次切屏，scroll不会相互影响(都在最顶部)(router官方文档有介绍)
+    scrollBehavior (to, from, savedPosition) {
+      return { x: 0, y: 0 }
+    }
 })
