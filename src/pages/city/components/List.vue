@@ -1,4 +1,5 @@
 <template>
+    <!-- ref帮助获取DOM -->
     <div class="list" ref="wrapper">
         <div>
             <div class="area">
@@ -44,6 +45,7 @@
 </template>
 
 <script>
+// npm install better-scroll --save
 import Bscroll from 'better-scroll'
 export default {
     name: 'CityList',
@@ -77,7 +79,7 @@ export default {
 
 <style lang="stylus" scoped>
     @import '~styles/varibles.styl'
-    //.border-topbottom的伪元素 :before和 :after 的边框颜色是#ccc
+    //控制1像素边框的颜色，   .border-topbottom的伪元素 :before和 :after 的边框颜色是#ccc
     .border-topbottom
         &:before
             border-color: #ccc

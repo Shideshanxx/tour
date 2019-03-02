@@ -49,7 +49,7 @@ export default {
         .item-info
             flex: 1
             padding: .1rem
-            min-width: 0   //必须加这一条下面的ellipsis()效果才不会出bug
+            min-width: 0   //必须加这一条下面的ellipsis()效果才不会出bug，不然文字区域会被撑开
             .item-title
                 line-height: .54rem
                 font-size: .32rem

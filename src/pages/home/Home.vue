@@ -14,6 +14,7 @@ import HomeSwiper from './components/Swiper'
 import HomeIcons from './components/Icons'
 import HomeRecommend from './components/Recommend'
 import HomeWeekend from './components/Weekend'
+// 引入axios
 import axios from 'axios'
 export default {
     name: 'Home',
@@ -34,6 +35,7 @@ export default {
     },
     methods: {
         getHomeInfo () {
+            // 在/config/inedx.js中配置proxyTable，开发环境中，当访问api路径时代理到/static/mock
             axios.get('/static/mock/index.json')
                 .then(this.getHomeInfoSucc)
         },

@@ -3,6 +3,7 @@
         <div class="search">
             <input v-model="keyword" class="search-input" type="text" placeholder="输入城市名或拼音"/>
         </div>
+        <!-- 搜索结果页，设置一个z-index值，让其处于最上面 -->
         <div 
             class="search-content" 
             ref="search"
@@ -56,7 +57,7 @@ export default {
                 const result = []
                 for (let i in this.cities) {
                     this.cities[i].forEach((value) => {
-                        //如果keyword存在
+                        //如果有匹配的结果
                         if (value.spell.indexOf(this.keyword) > -1 ||
                             value.name.indexOf(this.keyword) > -1) {
                             result.push(value)

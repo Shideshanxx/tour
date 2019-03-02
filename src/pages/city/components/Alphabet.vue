@@ -54,7 +54,7 @@ export default {
             //获取touch时的index，emit出去change事件和当前index值，然后change事件被监听，左侧内容跟随变动
             if (this.touchStatus) {
                 //emit出去change事件有16ms的延迟，如果在延迟之内又触发该事件，
-                //则上一次未执行的事件将被清除；通过这种函数节流的方式，大大提升性能
+                //则上一次未执行的事件将被清除；通过这种函数节流的方式，大大提升性能*****&*&*&*&&**
                 if (this.timer) {
                     clearTimeout(this.timer)
                 }
@@ -78,7 +78,7 @@ export default {
 <style lang="stylus" scoped>
     @import '~styles/varibles.styl'
     .list
-        //flex布局。。。。垂直居中了
+        //flex布局
         display: flex
         flex-direction: column
         justify-content: center
