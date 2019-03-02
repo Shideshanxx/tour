@@ -68,6 +68,7 @@ export default {
             bottom: 0
             line-height: .6rem
             color: #fff
+            // 图片渐变色
             background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8))
             .banner-title
                 flex: 1
@@ -77,7 +78,7 @@ export default {
                 margin-top: .14rem
                 padding: 0 .4rem
                 height: .32rem
-                line-height: .4rem
+                line-height: .32rem
                 border-radius: .2rem
                 background: rgba(0, 0, 0, .8)
                 font-size: .24rem

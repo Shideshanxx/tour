@@ -40,11 +40,12 @@ export default {
             }
         }
     },
-    mounted () {
+    activated () {
+        // 对全局对象绑定了一个事件
         window.addEventListener('scroll',this.handleScroll)
     },
-    //对全局事件解绑
-    unmounted () {
+    //对全局事件解绑(页面隐藏时)，以免影响其他页面
+    deactivated () {
         window.removeEventListener('scroll', this.handleScroll)
   }
 }

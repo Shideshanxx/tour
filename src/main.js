@@ -7,6 +7,7 @@ import fastClick from 'fastClick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 //有些浏览器不支持promise 引用下面的这个插件，自动添加ES6属性
 import 'babel-polyfill'
+// 引入vuex仓库
 import store from './store'
 // 样式初始化
 import 'styles/reset.css'

@@ -27,6 +27,7 @@
 
 <script>
 import Bscroll from 'better-scroll'
+import { mapMutations } from 'vuex'
 export default {
     name: 'CitySearch',
     props: {
@@ -70,12 +71,18 @@ export default {
     },
     methods: {
         handleCityClick (city) {
-            this.$store.commit('changeCity',city)
-            //每个组件都可使用$router， 编程式导航$router.push(...)等价于<router-link :to="...">
+            //vuex的方法，需要store/index.js里actions配合
+            //this.$store.dispatch('changeCity',city) 暂时不需要调用actions，直接调用mutations
+            // this.$store.commit('changeCity',city) 可以改成下面的代码，因为...mapMutations(['changeCity'])做了映射
+            this.changeCity(city)
+            // 编程式导航
             this.$router.push('/')
-        }
+        },
+        // 把vuex里mutations里的changeCity事件映射到本组件的methods里
+        ...mapMutations(['changeCity'])
     },
     mounted () {
+        // 引入beter-scroll使页面可以滚动
         this.scroll = new Bscroll(this.$refs.search)
     }
 }

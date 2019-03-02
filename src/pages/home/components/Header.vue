@@ -11,7 +11,8 @@
         <router-link to="/city">
             <div class="header-right">
                 <!--$store即vuex创建的store，因为main.js中引入了store所以所有组件都可以用$store-->
-                {{this.$store.state.city}}
+                <!-- {{this.$store.state.city}} 可改成{{this.city}} 因为  ...mapState(['city'])-->
+                {{this.city}}
                 <span class="iconfont arrow-icon">&#xe64a;</span>
             </div>
         </router-link>
@@ -19,8 +20,13 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
-    name: 'HomeHeader'
+    name: 'HomeHeader',
+    // mapState把vuex里的数据映射到本组件的computed计算属性里
+    computed: {
+        ...mapState(['city'])
+    }
 }
 </script>
 <!--lang="stylus" 引用css预处理框架stylus；
@@ -55,7 +61,8 @@ export default {
             border-radius: .1rem
             color: #ccc
         .header-right
-            width: 1.24rem
+            min-width: 1.04rem
+            padding: 0 .1rem
             float: right
             text-align: center
             color: #fff

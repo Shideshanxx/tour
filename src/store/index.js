@@ -1,20 +1,13 @@
 import Vue from 'vue'
+// npm install vuex --save安装并引入vuex
 import Vuex from 'vuex'
+import state from './state'
+import mutations from './mutations'
 
+// 使用vuex
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-    state: {
-        city: '武汉'
-    },
-    // actions: {
-    //     changeCity (ctx, city) {
-    //         ctx.commit('changeCity',city)
-    //     }
-    // },
-    mutations: {
-        changeCity (state, city) {
-            state.city = city
-        }
-    }
+    state,
+    mutations
 })

@@ -14,6 +14,7 @@ import HomeSwiper from './components/Swiper'
 import HomeIcons from './components/Icons'
 import HomeRecommend from './components/Recommend'
 import HomeWeekend from './components/Weekend'
+import {mapState} from 'vuex'
 // 引入axios
 import axios from 'axios'
 export default {
@@ -27,16 +28,20 @@ export default {
     },
     data () {
         return {
+            lastCity: '',
             swiperList: [],
             iconList: [],
             recommendList: [],
             weekendList: []
         }
     },
+    computed: {
+        ...mapState(['city'])
+    },
     methods: {
         getHomeInfo () {
             // 在/config/inedx.js中配置proxyTable，开发环境中，当访问api路径时代理到/static/mock
-            axios.get('/static/mock/index.json')
+            axios.get('/static/mock/index.json?city=' + this.city)
                 .then(this.getHomeInfoSucc)
         },
         getHomeInfoSucc (res) {
@@ -51,7 +56,15 @@ export default {
         }
     },
     mounted () {
+        this.lastCity = this.city
         this.getHomeInfo()
+    },
+    // 当页面显示时activated生命周期钩子会执行,实现当city改变时重新发送ajsx请求，否则因为<keep-alive>标签的原因不会重新发送ajax请求
+    activated () {
+        if (this.lastCity !== this.city) {
+            this.lastCity = this.city
+            this.getHomeInfo()
+        }
     }
 }
 </script>
