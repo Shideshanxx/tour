@@ -50,6 +50,7 @@ module.exports = {
     cssSourceMap: true
   },
 
+  // 打包配置**********************************
   build: {
     // Template for index.html
     index: path.resolve(__dirname, '../dist/index.html'),

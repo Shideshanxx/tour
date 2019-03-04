@@ -75,7 +75,7 @@ export default {
     watch: {
         letter () {
             if (this.letter) {
-                //用element缓存ref接受的循环出来的dom元素，scrollToElement是scroll自带的方法
+                //用element缓存ref接受的循环出来的dom元素，scrollToElement是better-scroll插件自带的方法
                 const element = this.$refs[this.letter][0]
                 this.scroll.scrollToElement(element)
             }

@@ -59,7 +59,7 @@ export default {
         this.lastCity = this.city
         this.getHomeInfo()
     },
-    // 当页面显示时activated生命周期钩子会执行,实现当city改变时重新发送ajsx请求，否则因为<keep-alive>标签的原因不会重新发送ajax请求
+    // 当页面显示时activated生命周期钩子会执行,实现当city改变时重新发送ajax请求，否则因为<keep-alive>标签的原因不会重新发送ajax请求
     activated () {
         if (this.lastCity !== this.city) {
             this.lastCity = this.city

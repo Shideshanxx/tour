@@ -1,6 +1,7 @@
 <template>
     <!--@touchstart.prevent阻止在拖动字母时页面整体跟着动-->
     <ul class="list">
+        <!-- @touchstart.prevent加入.prevent事件修饰符，阻止页面跟着拖动 -->
         <li 
             class="item" 
             v-for="item of letters" 
@@ -39,7 +40,7 @@ export default {
         }
     },
     //刚开始cities为空，ajax请求之后，updated钩子就会被执行，
-    //下面是性能优化的一步，单独抽出来绑定到this.startY，以免重复计算startY
+    //下面是性能优化的一步，单独抽出来绑定到this.startY，只计算一次，以免重复计算startY
     updated () {
         this.startY = this.$refs['A'][0].offsetTop
     },
@@ -54,7 +55,7 @@ export default {
             //获取touch时的index，emit出去change事件和当前index值，然后change事件被监听，左侧内容跟随变动
             if (this.touchStatus) {
                 //emit出去change事件有16ms的延迟，如果在延迟之内又触发该事件，
-                //则上一次未执行的事件将被清除；通过这种函数节流的方式，大大提升性能*****&*&*&*&&**
+                //则上一次未执行的事件将被清除；通过这种函数节流的方式，大大提升性能
                 if (this.timer) {
                     clearTimeout(this.timer)
                 }

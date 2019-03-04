@@ -5,7 +5,7 @@ import router from './router'
 import fastClick from 'fastClick'
 // 引入轮播图插件
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-//有些浏览器不支持promise 引用下面的这个插件，自动添加ES6属性
+//有些浏览器不支持promise 引用下面的这个插件，自动添加ES6属性（npm install babel-pollyfill --save）
 import 'babel-polyfill'
 // 引入vuex仓库
 import store from './store'
